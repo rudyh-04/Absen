@@ -12,7 +12,6 @@ st.subheader('Supply Chain Departement')
 st.subheader('Cikarang Plant')
 st.text('JI. Industri Selatan 1, Blok OO No.3G. JABABEKA Phase II')
 
-st.sidebar ('Member')
 option=st.sidebar.selectbox(Member.py)
 
 # Data pengguna (username dan password)
