@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import matplotlib as plt
 from PIL import Image
 from datetime import datetime
 import streamlit_authenticator as stauth
