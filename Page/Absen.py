@@ -68,7 +68,7 @@ if st.session_state.absensi_data:
 
         if st.button("Edit"):
             selected_entry = st.session_state.absensi_data[edit_index]
-            nama_edit = st.text_input("Nama:", value=selected_entry['Nama'])
+            nama_edit = st.text_input("Nama:", value=selected_entry['nama'])
             tanggal_masuk_edit = st.date_input("Tanggal Masuk:", value=selected_entry['Tanggal Masuk'])
             jam_masuk_edit = st.time_input("Jam Masuk:", value=selected_entry['Jam Masuk'])
             tanggal_keluar_edit = st.date_input("Tanggal Keluar:", value=selected_entry['Tanggal Keluar'])
