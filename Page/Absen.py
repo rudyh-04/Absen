@@ -1,4 +1,3 @@
-import tkinter as tk
 from tkinter import messagebox
 import streamlit as st
 import pandas as pd
