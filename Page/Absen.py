@@ -28,7 +28,7 @@ if 'daftar_karyawan' not in st.session_state:
 
     # Form untuk input absensi
 with st.form(key='absensi_form'):
-        nama_karyawan = st.text_input("Nama_karyawan") tambah_karyawan =
+        nama_karyawan = st.text_input("Nama_karyawan")tambah_karyawan =
         st.button("Tambah Karyawan")
                                                                       
     if tambah_karyawan and nama_karyawan:
