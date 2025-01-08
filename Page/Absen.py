@@ -64,7 +64,7 @@ if st.session_state.absensi_data:
         st.dataframe(df)
 
     # Fitur untuk mengedit data
-    edit_index = st.selectbox("Pilih entri untuk diedit:", range(len(st.session_state.absensi_data)), format_func=lambda x: f"{st.session_state.absensi_data[x]['Nama']} - {st.session_state.absensi_data[x]['Tanggal Masuk']}")
+            edit_index = st.selectbox("Pilih entri untuk diedit:", range(len(st.session_state.absensi_data)), format_func=lambda x: f"{st.session_state.absensi_data[x]['Nama']} - {st.session_state.absensi_data[x]['Tanggal Masuk']}")
 if st.button("Edit"):
             selected_entry = st.session_state.absensi_data[edit_index]
             nama_edit = st.text_input("Nama:", value=selected_entry['Nama'])
