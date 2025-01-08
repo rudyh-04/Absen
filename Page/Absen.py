@@ -63,16 +63,16 @@ if st.session_state.absensi_data:
         df = pd.DataFrame(st.session_state.absensi_data)
         st.dataframe(df)
 
-        # Fitur untuk mengedit data
-        edit_index = st.selectbox("Pilih entri untuk diedit:", range(len(st.session_state.absensi_data)), format_func=lambda x: f"{st.session_state.absensi_data[x]['nama']} - {st.session_state.absensi_data[x]['Tanggal Masuk']}")
+         # Fitur untuk mengedit data
+    edit_index = st.selectbox("Pilih entri untuk diedit:", range(len(st.session_state.absensi_data)), format_func=lambda x: f"{st.session_state.absensi_data[x]['Nama Karyawan']} - {st.session_state.absensi_data[x]['Tanggal Masuk']}")
 
-        if st.button("Edit"):
-            selected_entry = st.session_state.absensi_data[edit_index]
-            nama_edit = st.text_input("Nama:", value=selected_entry['nama'])
-            tanggal_masuk_edit = st.date_input("Tanggal Masuk:", value=selected_entry['Tanggal Masuk'])
-            jam_masuk_edit = st.time_input("Jam Masuk:", value=selected_entry['Jam Masuk'])
-            tanggal_keluar_edit = st.date_input("Tanggal Keluar:", value=selected_entry['Tanggal Keluar'])
-            jam_keluar_edit = st.time_input("Jam Keluar:", value=selected_entry['Jam Keluar'])
+    if st.button("Edit"):
+        selected_entry = st.session_state.absensi_data[edit_index]
+        nama_edit = st.text_input("Nama:", value=selected_entry['Nama Karyawan'])
+        tanggal_masuk_edit = st.date_input("Tanggal Masuk:", value=selected_entry['Tanggal Masuk'])
+        jam_masuk_edit = st.time_input("Jam Masuk:", value=selected_entry['Jam Masuk'])
+        tanggal_keluar_edit = st.date_input("Tanggal Keluar:", value=selected_entry['Tanggal Keluar'])
+        jam_keluar_edit = st.time_input("Jam Keluar:", value=selected_entry['Jam Keluar'])
             
              # Hitung lembur
             lembur_edit = 0
