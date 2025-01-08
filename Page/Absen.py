@@ -20,10 +20,10 @@ names = ['User    One', 'User    Two']
     # Inisialisasi data absensi
 if 'absensi_data' not in st.session_state:
         st.session_state.absensi_data = []
-    
+
     # Form untuk input absensi
 with st.form(key='absensi_form'):
-        nama = st.text_input("Nama Karyawan:")
+        nama = st.text_input("Nama:")
         tanggal_masuk = st.date_input("Tanggal Masuk:", datetime.today())
         jam_masuk = st.time_input("Jam Masuk:")
         tanggal_keluar = st.date_input("Tanggal Keluar:", datetime.today())
@@ -42,12 +42,12 @@ with st.form(key='absensi_form'):
 
         lembur_checkbox = st.checkbox("Lembur (jam):", value=lembur)
 
-        submit_button = st.form_submit_button(label='Kirim')
+        submit_button = st.form_submit_button(label='Save')
 
         if submit_button:
             # Menyimpan data absensi
             absensi_entry = {
-                'Nama Karyawan': nama,
+                'Nama': nama,
                 'Tanggal Masuk': tanggal_masuk,
                 'Jam Masuk': jam_masuk,
                 'Tanggal Keluar': tanggal_keluar,
@@ -63,16 +63,16 @@ if st.session_state.absensi_data:
         df = pd.DataFrame(st.session_state.absensi_data)
         st.dataframe(df)
 
-         # Fitur untuk mengedit data
-    edit_index = st.selectbox("Pilih entri untuk diedit:", range(len(st.session_state.absensi_data)), format_func=lambda x: f"{st.session_state.absensi_data[x]['Nama Karyawan']} - {st.session_state.absensi_data[x]['Tanggal Masuk']}")
+        # Fitur untuk mengedit data
+        edit_index = st.selectbox("Pilih entri untuk diedit:", range(len(st.session_state.absensi_data)), format_func=lambda x: f"{st.session_state.absensi_data[x]['Nama']} - {st.session_state.absensi_data[x]['Tanggal Masuk']}")
 
-    if st.button("Edit"):
-        selected_entry = st.session_state.absensi_data[edit_index]
-        nama_edit = st.text_input("Nama:", value=selected_entry['Nama Karyawan'])
-        tanggal_masuk_edit = st.date_input("Tanggal Masuk:", value=selected_entry['Tanggal Masuk'])
-        jam_masuk_edit = st.time_input("Jam Masuk:", value=selected_entry['Jam Masuk'])
-        tanggal_keluar_edit = st.date_input("Tanggal Keluar:", value=selected_entry['Tanggal Keluar'])
-        jam_keluar_edit = st.time_input("Jam Keluar:", value=selected_entry['Jam Keluar'])
+        if st.button("Edit"):
+            selected_entry = st.session_state.absensi_data[edit_index]
+            nama_edit = st.text_input("Nama:", value=selected_entry['Nama'])
+            tanggal_masuk_edit = st.date_input("Tanggal Masuk:", value=selected_entry['Tanggal Masuk'])
+            jam_masuk_edit = st.time_input("Jam Masuk:", value=selected_entry['Jam Masuk'])
+            tanggal_keluar_edit = st.date_input("Tanggal Keluar:", value=selected_entry['Tanggal Keluar'])
+            jam_keluar_edit = st.time_input("Jam Keluar:", value=selected_entry['Jam Keluar'])
             
              # Hitung lembur
             lembur_edit = 0
@@ -102,4 +102,6 @@ if st.session_state.absensi_data:
             file_name='absensi_data.csv',
             mime='text/csv',
         )
+
+
 
