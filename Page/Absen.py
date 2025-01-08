@@ -3,8 +3,6 @@ import pandas as pd
 import numpy as np
 from PIL import Image
 from datetime import datetime
-import streamlit_authenticator as stauth
-
 
 # Data pengguna (username dan password)
 usernames = ['user1', 'user2']
