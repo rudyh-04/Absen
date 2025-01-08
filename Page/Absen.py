@@ -33,7 +33,7 @@ with st.form(key='absensi_form'):
                                                                       
 if tambah_karyawan and nama_karyawan:
         st.session_state.daftar_karyawan.append(nama_karyawan)
-        st.success(f"Karyawan'{nama_karyawan}' berhasil ditambahkan!)
+        st.success("Karyawan'{nama_karyawan}' berhasil ditambahkan!)
         tanggal_masuk = st.date_input("Tanggal Masuk:", datetime.today())
         jam_masuk = st.time_input("Jam Masuk:")
         tanggal_keluar = st.date_input("Tanggal Keluar:", datetime.today())
