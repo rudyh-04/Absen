@@ -40,7 +40,7 @@ with st.form(key='absensi_form'):
             
             # Asumsi lembur jika total jam kerja lebih dari 8 jam
             lembur = max(0, total_jam_kerja - 9)
-            keterangan_lembur = st.text_input("Keterangan:")
+            keterangan_lembur = st.text_input("Keterangan Lembur:")
 
         lembur_checkbox = st.checkbox("Lembur (jam):", value=lembur)
 
@@ -54,7 +54,8 @@ with st.form(key='absensi_form'):
                 'Jam Masuk': jam_masuk,
                 'Tanggal Keluar': tanggal_keluar,
                 'Jam Keluar': jam_keluar,
-                'Lembur (jam)': lembur
+                'Lembur (jam)': lembur,
+                'Keterangan Lembur': keterangan_lembur
             }
             st.session_state.absensi_data.append(absensi_entry)
             st.success("Data absensi berhasil disimpan!")
