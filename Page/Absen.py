@@ -45,7 +45,7 @@ with st.form(key='absensi_form'):
         submit_button = st.form_submit_button(label='Kirim')
 
        # Input keterangan lembur
-       st.text_input("Keterangan Lembur")
+       option=st.text_input("Keterangan Lembur")
        if keterangan_lembur:
            st.write(f"Keterangan Lembur: {keterangan_lembur}")
         
