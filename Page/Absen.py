@@ -47,7 +47,7 @@ with st.form(key='absensi_form'):
         if submit_button:
             # Menyimpan data absensi
             absensi_entry = {
-                'Nama Karyawan': nama_karyawan,
+                'Nama Karyawan': nama,
                 'Tanggal Masuk': tanggal_masuk,
                 'Jam Masuk': jam_masuk,
                 'Tanggal Keluar': tanggal_keluar,
