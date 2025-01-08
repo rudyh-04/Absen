@@ -21,19 +21,9 @@ names = ['User    One', 'User    Two']
 if 'absensi_data' not in st.session_state:
         st.session_state.absensi_data = []
     
-    #Inisialisasi daftar karyawan
-if 'daftar_karyawan' not in st.session_state: 
-    st.session_state.daftar_karyawan = []
-    
     # Form untuk input absensi
 with st.form(key='absensi_form'):
-        nama_karyawan = st.text_input("Nama_karyawan")
-        tambah_karyawan = st.form_submit_button("Tambah_Karyawan")
-                                                                      
-if tambah_karyawan and nama_karyawan:
-        st.session_state.daftar_karyawan.append(nama_karyawan)
-        st.success(f"Karyawan '{nama_karyawan}' berhasil ditambahkan!")
-        nama_karyawan = st.text_input("Nama Karyawan:")
+        nama = st.text_input("Nama Karyawan:")
         tanggal_masuk = st.date_input("Tanggal Masuk:", datetime.today())
         jam_masuk = st.time_input("Jam Masuk:")
         tanggal_keluar = st.date_input("Tanggal Keluar:", datetime.today())
