@@ -40,6 +40,7 @@ with st.form(key='absensi_form'):
             
             # Asumsi lembur jika total jam kerja lebih dari 8 jam
             lembur = max(0, total_jam_kerja - 9)
+            keterangan_lembur = st.text_input("Keterangan:")
 
         lembur_checkbox = st.checkbox("Lembur (jam):", value=lembur)
 
