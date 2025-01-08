@@ -25,7 +25,6 @@ if 'absensi_data' not in st.session_state:
 if 'daftar_karyawan' not in st.session_state: 
     st.session_state.daftar_karyawan = []
     
-
     # Form untuk input absensi
 with st.form(key='absensi_form'):
         nama_karyawan = st.text_input("Nama_karyawan")
