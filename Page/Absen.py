@@ -13,6 +13,10 @@ st.subheader('Supply Chain Departement')
 st.subheader('Cikarang Plant')
 st.text('JI. Industri Selatan 1, Blok OO No.3G. JABABEKA Phase II')
 
+#fungsi untuk menyimpan data ke csv
+def save_data(df):
+    df.to_csv("absen.'csv', mode='w', header=false, index=false")
+    
 # Data pengguna (username dan password)
 usernames = ['user1', 'user2']
 passwords = ['password1', 'password2']
