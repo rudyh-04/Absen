@@ -68,6 +68,9 @@ with st.form(key='absensi_form'):
         df = pd.DataFrame(st.session_state.absensi_data)
         df.to_csv('absensi_data.csv', index=False)  # Simpan ke file CSV
 
+save-data(df)
+st.success("Data absensi berhasil disimpan")
+
     # Menampilkan data absensi
 if st.session_state.absensi_data:
         st.subheader("Data Absensi")
