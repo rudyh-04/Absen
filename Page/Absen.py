@@ -76,6 +76,7 @@ if st.session_state.absensi_data:
         st.subheader("Data Absensi")
         df = pd.DataFrame(st.session_state.absensi_data)
         st.dataframe(df)
+    st.write(absensi_data)
 
         # Fitur untuk mengedit data
         edit_index = st.selectbox("Pilih entri untuk diedit:", range(len(st.session_state.absensi_data)), format_func=lambda x: f"{st.session_state.absensi_data[x]['Nama']} - {st.session_state.absensi_data[x]['Tanggal Masuk']}")
